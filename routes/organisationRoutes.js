@@ -11,12 +11,12 @@ var errorHandler = require('../validators/errorHandler');
 //  create organisation
 router.post('/create', errorHandler.run, organisationController.createOrganisation);
 
-router.post('/join-request', errorHandler.run, organisationController.createRequest);
-
 router.get('/list-users/:id',errorHandler.run, organisationController.listOrgUsers);
 
-router.put('/delink-user/:id', errorHandler.run,organisationController.delinkUser);
+router.put('/join-request', errorHandler.run, organisationController.createRequest);
 
-router.delete('/approve-request/:id', errorHandler.run, organisationController.approveJoinRequest);
+router.put('/approve-request/:id', errorHandler.run, organisationController.approveJoinRequest);
+
+router.put('/delink-user/:id', errorHandler.run,organisationController.delinkUser);
 
 module.exports = router;

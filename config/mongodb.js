@@ -5,12 +5,10 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 require('../models/organisationModel');
 require('../models/userModel');
-require('../models/joinRequestModel');
 
 module.exports = {
     models: {
         User: mongoose.model('User'),
-        Organisation: mongoose.model('Organisation'),
-        JoinRequest: mongoose.model('JoinRequest')
+        Organisation: mongoose.model('Organisation')
     }
 }
